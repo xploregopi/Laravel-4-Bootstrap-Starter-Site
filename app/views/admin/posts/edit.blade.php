@@ -1,4 +1,4 @@
-@extends('admin.templates.modal')
+@extends('admin.layouts.modal')
 
 {{-- Extra CSS styles --}}
 @section('styles')
@@ -39,7 +39,6 @@
 	{{ Former::populateField('meta_description', $post->meta_description) }}
 	{{ Former::populateField('meta_keywords', $post->meta_keywords) }}
 
-
 		@include('admin.posts.form')
 
 	{{ Former::close() }}
@@ -49,8 +48,5 @@
 
 {{-- Extra JavaScripts --}}
 @section('scripts')
-<script type="text/javascript">
-	$('.wysihtml5').wysihtml5();
-    $(prettyPrint);
-</script>
+@include('admin.templates.wysiwyg')
 @stop
